@@ -16,4 +16,4 @@ I am an **accomplished**, **innovative** Dev/DevOps engineer and **teacher**
 
 ## Teacher
 
-- gave dozens of talks, workshops, and training sessions
+- giving dozens of talks, workshops, and training sessions
