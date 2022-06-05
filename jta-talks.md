@@ -1,6 +1,6 @@
 # JohnTellsAll Talks
 
-I've been obsessed with Dev, DevOps, and Quality for many years. Like my parents before me, I really enjoy working with and teaching other Engineers at all phases of the career path. In the Los Angeles area I've given dozens of talks and worshops, and helped lead a few Meetup groups.
+I've been obsessed with Dev, DevOps, and Quality for many years. Like my parents before me, I really enjoy working with and teaching other Engineers at all phases of the career path. In the Los Angeles area I've given dozens of talks and worshops, and helped lead a few Meetup groups and seminars.
 
 ## Upcoming
 
@@ -11,7 +11,7 @@ I've been obsessed with Dev, DevOps, and Quality for many years. Like my parents
     - Fast DevOps Workflows (same, with stateful Resources and eventually-consistent APIs)
 
 - (short) Linux/Kubernetes Overlap [soon]
-  - People are intimidated at all that YAML. I briefly show how K8s resources are Linux resources, so we can use traditiona tools to see and control them -- good old `ps` and `top` and `strace`
+  - People are intimidated by all that YAML. I briefly show how K8s resources are Linux resources, so we can use traditional tools to see and control them -- good old `ps` and `top` and `strace`.
 
 ## Core
 
@@ -52,3 +52,4 @@ I gave this talk twice. At the "learn how to get a QA job" group Test Pro, 99% o
 - workshop at Philosophie for XX Women's Dev group
 - Iterators workshop
 - teaching Python at two venues
+- Infra as Code seminar
