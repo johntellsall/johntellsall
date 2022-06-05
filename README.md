@@ -11,9 +11,9 @@ I am an **accomplished**, **innovative** Dev/DevOps engineer and **teacher**
 
 ## Innovative
 
-- writing book/workshop on Feedback Loops
-- developing large code analyzer (Shotglass)
+- writing [book/workshop](jta-book.md) for Dev/DevOps professionals
+- developing large code analyzer ([Shotglass](https://github.com/johntellsall/shotglass#readme))
 
 ## Teacher
 
-- giving dozens of talks, workshops, and training sessions
+- giving dozens of [talks, workshops, and training sessions](jta-talks.md)
