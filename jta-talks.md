@@ -42,7 +42,7 @@ I gave this talk twice. At the "learn how to get a QA job" group Test Pro, 99% o
 - Functional Programming and Django QuerySets [2016]
   - [presentation on YouTube](https://www.youtube.com/watch?v=IUtm8OsrSpA)
 - Practical Python Testing [2015]
-  - [Google Slides](https://docs.google.com/presentation/d/1kHAPFAHqJ2KHq_UZ9cETB6LK2jgiOQFvCFFEf3PIe8Y/edit#slide=id.p
+  - [Google Slides](https://docs.google.com/presentation/d/1kHAPFAHqJ2KHq_UZ9cETB6LK2jgiOQFvCFFEf3PIe8Y/edit#slide=id.p)
 - Tricking out your Linux Kernel Networking @Unix Users [2014]
 - Queues in Python with AMQP [2009]
   
