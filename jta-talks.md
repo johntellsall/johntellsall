@@ -7,7 +7,8 @@ I've been obsessed with Dev, DevOps, and Quality for many years. Like my parents
 - Fast Dev/DevOps [soon]
   - The "Fast DevOps with Terraform" talk below is being expanded into the core of my book, which includes new talks: 
     - Fast Development (shim code, "test" first)
-    - Fast Dev Workflows (change focus/latency to create sharp tools to create code)- Fast DevOps Workflows (same, with stateful Resources and eventually-consistent APIs)
+    - Fast Dev Workflows (change focus/latency to create sharp tools to create code)
+    - Fast DevOps Workflows (same, with stateful Resources and eventually-consistent APIs)
 
 - (short) Linux/Kubernetes Overlap [soon]
   - People are intimidated at all that YAML. I briefly show how K8s resources are Linux resources, so we can use traditiona tools to see and control them -- good old `ps` and `top` and `strace`
