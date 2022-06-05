@@ -20,7 +20,7 @@ I've been obsessed with Dev, DevOps, and Quality for many years. Like my parents
   - [presentation on YouTube](https://www.youtube.com/watch?v=iJX6h45k_AQ)
 - Fast DevOps: Rapid Terraform with Entr [2021]
   - [screencast on YouTube](https://www.youtube.com/watch?v=zd7VlmClTDs)
-  - 
+
 ## Others
 
 - Security for Humans, TestableLA and private company [2022]
