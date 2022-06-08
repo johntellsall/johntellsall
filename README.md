@@ -8,6 +8,7 @@ I am an **accomplished**, **innovative** Dev/DevOps engineer and **teacher**
 - certificates in AWS and Kubernetes
 - colorful career path
 - currently DevOps/Security Engineer
+- resume on request
 
 ## Innovative
 
