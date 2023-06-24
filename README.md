@@ -6,7 +6,7 @@ I am an **accomplished**, **innovative** Dev/DevOps Engineer and **teacher**
 
 I blog at [dev.to/johntellsall](https://dev.to/johntellsall), mostly on "Fast Developer" and "Fast DevOps", but also Fast Startup. My focus is also on Quality but `fast` is what people search for :)  Twitter is [@johntellsall](https://twitter.com/johntellsall)
 
-My work in the last decade is mostly DevOps, and my strong Dev background leads to a unique viewpoint. Infra as Code is no problem -- DevOps tools can be rough, so adapting Developer Best Practices reduces risk, speeds up the feedback loop, and pays ROI.
+My work in the last decade is mostly DevOps, and my strong Dev background leads to a unique viewpoint. Infra as Code is no problem -- DevOps tools can be rough, so adapting Developer Best Practices reduces risk, speeds up the feedback loop, and pays ROI _forever_.
 
 ## Accomplished
 
