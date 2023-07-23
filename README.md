@@ -11,7 +11,7 @@ My work in the last decade is mostly DevOps, and my strong Dev background leads 
 ## Accomplished
 
 - decades programming in many languages, including Python
-- certificates in AWS and Kubernetes
+- certificates in AWS and Kubernetes (CKAD)
 - varied career path
 - currently DevOps/Security Engineer
 - resume on request
