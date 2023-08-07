@@ -1,6 +1,6 @@
 # John Tells All
 
-I am an **accomplished**, **innovative** Dev/DevOps Engineer and **teacher**
+I am an **accomplished**, **innovative** Dev/DevOps Engineer, with skills in **Cloud** and **Security**
 
 ## Ideas
 
@@ -11,15 +11,25 @@ My work in the last decade is mostly DevOps, and my strong Dev background leads 
 ## Accomplished
 
 - decades programming in many languages, including Python
-- certificates in AWS and Kubernetes (CKAD)
 - varied career path
 - currently DevOps/Security Engineer
 - resume on request
 
 ## Innovative
 
-- writing [book/workshop](jta-book.md) for Dev/DevOps professionals
+- writing [book/workshop](jta-book.md) for Dev/DevOps professionals: fast feedback loops
 - developing large code analyzer ([Shotglass](https://github.com/johntellsall/shotglass#readme))
+
+## Cloud
+
+- lots of AWS work: startups and enterprise consulting; some GCP
+- fan of Docker and Kubernetes
+- certificates in AWS (CDA) and Kubernetes (CKAD)
+
+## Security
+
+- helped with ISO-27001 certification for fintech startup
+- developed security "guardrails" for very big bank; basically a security layer atop AWS
 
 ## Teacher
 
