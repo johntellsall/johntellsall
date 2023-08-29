@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: color-app
+  name: color-app
+spec:
+  selector:
+    matchLabels:
+      app: color-app
+  template:
+    metadata:
+      labels:
+        app: color-app
+    spec:
+      containers:
+      - image: mmumshad/simple-webapp-color
+        imagePullPolicy: Always
+        name: simple-webapp-color
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources: {}
+      securityContext: {}
+      # NOTE: for Dev only: Prod should be 30 (safer)
+      terminationGracePeriodSeconds: 1
