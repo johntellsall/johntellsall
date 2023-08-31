@@ -1,5 +1,11 @@
 # NOTES
 
+## 123
+
+### ConfigMap
+
+    k create cm beer -oyaml --dry-run=client --from-literal=beer=tasty > configmap.yaml
+    
 ## Deploy with Kubernetes Deployment (Color App)
 
 Manually create a Deployment pointing to an Image, then expose its Service for use.
