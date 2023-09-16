@@ -9,3 +9,6 @@ run:
 
 format:
 	venv/bin/black $$(git ls-files '*.py')
+
+list:
+	git ls-files '*.py'
