@@ -5,7 +5,7 @@
 ### ConfigMap
 
     k create cm beer -oyaml --dry-run=client --from-literal=beer=tasty > configmap.yaml
-    
+
 ## Deploy with Kubernetes Deployment (Color App)
 
 Manually create a Deployment pointing to an Image, then expose its Service for use.
@@ -19,7 +19,16 @@ FIXME: type=LoadBalancer
 
     watch curl -s localhost:8080
 
-## Deploy with Helm Chart (Apache)
+## create and start Kubernetes (K3s) cluster
+
+NOTE: need 4G ram
+
+    colima start --cpu 2 --memory 4 --with-kubernetes
+
+
+## ALSO: Helm CRD (K3s only)
+
+Deploy with Helm Chart (Apache)
 
 Deploy using a Helm Chart directly, with a config to correctly expose the Service for use.
 
@@ -45,9 +54,3 @@ Automatically exposes metrics!
 
     curl -s localhost:9117/metrics | grep -E code=.200
     promhttp_metric_handler_requests_total{code="200"} 278
-
-## create and start Kubernetes (K3s) cluster
-
-NOTE: need 4G ram
-
-    colima start --cpu 2 --memory 4 --with-kubernetes
