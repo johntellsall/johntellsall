@@ -8,4 +8,4 @@ run:
 	cd cat_crm ; python manage.py runserver
 
 format:
-	venv/bin/black cat_crm
+	venv/bin/black $$(git ls-files '*.py')
