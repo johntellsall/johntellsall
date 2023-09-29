@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  beer: tasty
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: test-configmap

@@ -2,7 +2,9 @@ all:
 
 setup:
 	test -d venv || python3 -m venv venv
-	venv/bin/pip install -r requirements.txt
+	source venv/bin/activate
+	venv/bin/pip install -r requirements/local.txt
+	venv/bin/python manage.py migrate
 
 run:
 	cd cat_crm ; python manage.py runserver
