@@ -1,0 +1,26 @@
+# ("data science" OR "machine learning" OR "research software engineer" OR "forecasting") AND -blockchain  AND apply AND  ("los angeles" OR "remote" AND -UK) AND (site:boards.greenhouse.io OR site:lever.co OR site:icims.com OR site:workable.com OR site:myworkdayjobs.com ) AND after:2023-09-13
+---
+search:
+  - data science
+  # - machine learning
+  # - research software engineer
+  # - forecasting
+
+location:
+  - los angeles
+#   - remote
+# # exclude: FIXME:
+# # - "-UK"
+
+sites:
+  - boards.greenhouse.io
+#   # - lever.co
+#   # - icims.com
+#   # - workable.com
+#   # - myworkdayjobs.com
+
+require:
+  - apply
+
+# exclude:
+#   - blockchain

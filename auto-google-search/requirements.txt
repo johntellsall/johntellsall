@@ -1,0 +1,7 @@
+python-dotenv
+requests
+pytest
+ruff
+click
+google-custom-search
+pyyaml
