@@ -4,7 +4,7 @@ lambda_hello.zip:
 	zip lambda_hello.zip lambda_hello.py
 
 invoke-lambda:
-	aws lambda invoke --function-name example_lambda_function \
+	aws lambda invoke --function-name hello \
 	--payload '{}' output.json
 	jq < output.json '.'
 
@@ -34,6 +34,7 @@ devloop-plan: aws-ping
 
 devloop-auto-apply: aws-ping
 	git ls-files | entr -c make plan-apply
+	make invoke-lambda
 
 devloop: devloop-plan
 

@@ -1,6 +1,6 @@
 
-resource "aws_lambda_function" "example_lambda" {
-  function_name = "example_lambda_function"
+resource "aws_lambda_function" "lambda_hello" {
+  function_name = "hello"
   handler = "lambda_handler.lambda_handler" # This should match the handler function in your Python code
   runtime = "python3.8"
   
@@ -8,8 +8,8 @@ resource "aws_lambda_function" "example_lambda" {
   # role = aws_iam_role.lambda_role.arn
   
   # Zip your Python code and any dependencies into a deployment package
-  filename      = "lambda_function.zip"
-  source_code_hash = filebase64sha256("lambda_function.zip")
+  filename      = "lambda_hello.zip"
+  source_code_hash = filebase64sha256("lambda_hello.zip")
   
   # IAM Role for the Lambda function
   role = aws_iam_role.lambda_role.arn
@@ -38,7 +38,8 @@ resource "aws_iam_role" "lambda_role" {
 }
 
 # Attach necessary permissions to the Lambda role, for example, to access S3
-resource "aws_iam_policy_attachment" "lambda_s3_attachment" {
-  policy_arn = "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess" # Adjust the policy as needed
+resource "aws_iam_policy_attachment" "lambda_policy_attachment" {
+  name = "lambda_policy_attachment"
+  policy_arn = "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess" # FIXME: Adjust the policy as needed
   roles      = [aws_iam_role.lambda_role.name]
 }
