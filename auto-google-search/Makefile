@@ -5,7 +5,7 @@ setup:
 	venv/bin/pip install -r requirements.txt
 
 run:
-	venv/bin/python3 gsearch.py -v
+	venv/bin/python3 gsearch.py -nv jm-john-search.yaml
 
 test:
 	venv/bin/pytest -v

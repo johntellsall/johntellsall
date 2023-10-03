@@ -1,25 +1,16 @@
-import json
-import sys
-import gsearch
 import os
+import pytest
+
 import google_custom_search
+from dotenv import load_dotenv
 
 
-# def test_format_query():
-#     query = {
-#         "search": ["flask", "django"],
-#         "location": ["remote", "puerto rico"],
-#         "sites": ["stackoverflow.com", "github.com"],
-#         "require": ["django"],
-#     }
-#     result = gsearch.format_query(query)
-#     assert (
-#         '("flask" OR "django") AND ("remote" OR "puerto rico")'
-#         ' AND ("site:stackoverflow.com" OR "site:github.com")'
-#         ' AND "django"'
-#     ) == result
+load_dotenv()
+ENGINE_ID = os.environ.get("GOOGLE_ENGINE_ID")
+API_KEY = os.environ.get("GOOGLE_API_KEY")
 
 
+@pytest.mark.skipif(not ENGINE_ID or not API_KEY, reason="API keys not set")
 def test_google_custom_search():
     ENGINE_ID = os.environ["GOOGLE_ENGINE_ID"]
     API_KEY = os.environ["GOOGLE_API_KEY"]

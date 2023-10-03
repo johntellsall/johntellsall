@@ -17,7 +17,6 @@ from dotenv import load_dotenv
 load_dotenv()
 ENGINE_ID = os.environ["GOOGLE_ENGINE_ID"]
 API_KEY = os.environ["GOOGLE_API_KEY"]
-# SEARCH_URL = "https://www.googleapis.com/customsearch/v1"
 
 
 def join_or(terms) -> str:
@@ -55,7 +54,7 @@ def format_query(query):
 def print_results(results):
     for item in results[:3]:
         click.echo(f'ITEM.title: {item.title}')
-        # click.echo(f'ITEM.link: {item.link}')
+        click.echo(f'ITEM.link: {item.data.get("link")}')
 
 
 def write_results(results):
@@ -67,46 +66,27 @@ def write_results(results):
 @click.command()
 @click.option('-v', '--verbose', is_flag=True, help='Enable verbose mode')
 @click.option('-n', '--dry-run', is_flag=True, help='Dry run')
-def main(dry_run, verbose, query=None):
+@click.argument('input', type=click.File('r'), required=False)
+def main(dry_run, verbose, input="example.yaml", query=None):
     if query is None:
-        with open("example.yaml") as f:
-            query = yaml.safe_load(f)
+        query = yaml.safe_load(input)
 
     query_str = format_query(query)
-    # search = SEARCH_URL
-    # params = {
-    #     "q": query_str,
-    #     "key": API_KEY,
-    #     "cx": ENGINE_ID
-    # }
-    # # FIXME:
-    # params['q'] = urllib.parse.quote_plus(params['q'])
-
+    
     if verbose or dry_run:
         click.echo(f'{query_str=}')
-        # FIXME: params['key'] = 'REDACTED'
-        # click.echo(f'{params=}')
         if dry_run:
             sys.exit(0)
     
     google = google_custom_search.CustomSearch(apikey=API_KEY, engine_id=ENGINE_ID)
 
-    results = google.search(query)
-    # import ipdb ; ipdb.set_trace()
-    # breakpoint()
-
-    # results = requests.get(search, params=params).json()
-    # if "error" in results:
-    #     sys.exit(f'Search failed: {results["error"]["message"]}')
-
+    results = google.search(query_str)
+  
     if verbose:
         click.echo('RESULTS:')
         print_results(results)
 
     write_results(results)
-
-    # totalResults = results["searchInformation"]["totalResults"]
-    # click.echo(f"COUNT: {totalResults}")
 
 
 if __name__ == "__main__":
