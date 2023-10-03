@@ -66,11 +66,13 @@ def write_results(results):
 
 
 @click.command()
-@click.option('--limit', default=3, help='Number of results to return')
+@click.option('--limit', default=3, type=int, help='Number of results to return')
 @click.option('-v', '--verbose', is_flag=True, help='Enable verbose mode')
 @click.option('-n', '--dry-run', is_flag=True, help='Dry run')
 @click.argument('input', type=click.File('r'), required=False)
 def main(dry_run, verbose, input="example.yaml", limit=None, query=None):
+    if not limit:
+        limit = None
     if query is None:
         query = yaml.safe_load(input)
 
