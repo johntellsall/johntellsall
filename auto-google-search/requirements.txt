@@ -5,3 +5,4 @@ ruff
 click
 google-custom-search
 pyyaml
+ipdb

@@ -9,7 +9,7 @@ import os
 import sys
 
 import click
-import requests
+import google_custom_search
 import yaml
 from dotenv import load_dotenv
 
@@ -17,7 +17,7 @@ from dotenv import load_dotenv
 load_dotenv()
 ENGINE_ID = os.environ["GOOGLE_ENGINE_ID"]
 API_KEY = os.environ["GOOGLE_API_KEY"]
-SEARCH_URL = "https://www.googleapis.com/customsearch/v1"
+# SEARCH_URL = "https://www.googleapis.com/customsearch/v1"
 
 
 def join_or(terms) -> str:
@@ -53,61 +53,60 @@ def format_query(query):
 
 
 def print_results(results):
-    results = results.copy()
-    try:
-        items = results.pop('items')
-    except KeyError:
-        click.echo('ERROR?   ')
-        json.dump(results, sys.stdout, indent=2)
-        return
-    
-    json.dump(results, sys.stdout, indent=2)
-    click.echo(f'REQUEST.searchTerms: {results["queries"]["request"][0]["searchTerms"]}')
-    click.echo(f'REQUEST.totalResults: {results["searchInformation"]["totalResults"]}')
-    # click.echo(f'REQUEST.correctedQuery: {results["spelling"]["correctedQuery"]}')
-    for item in items[:3]:
-        click.echo(f'ITEM.title: {item["title"]}')
-        click.echo(f'ITEM.link: {item["link"]}')
+    for item in results[:3]:
+        click.echo(f'ITEM.title: {item.title}')
+        # click.echo(f'ITEM.link: {item.link}')
 
-import urllib.parse
+
+def write_results(results):
+    output = [item.data for item in results]
+    with open("results.json", "w") as f:
+        json.dump(output, f, indent=2)
+
 
 @click.command()
 @click.option('-v', '--verbose', is_flag=True, help='Enable verbose mode')
 @click.option('-n', '--dry-run', is_flag=True, help='Dry run')
-def main(dry_run, verbose):
-    with open("example.yaml") as f:
-        query = yaml.safe_load(f)
+def main(dry_run, verbose, query=None):
+    if query is None:
+        with open("example.yaml") as f:
+            query = yaml.safe_load(f)
 
     query_str = format_query(query)
-    search = SEARCH_URL
-    params = {
-        "q": query_str,
-        "key": API_KEY,
-        "cx": ENGINE_ID
-    }
-    # FIXME:
-    params['q'] = urllib.parse.quote_plus(params['q'])
+    # search = SEARCH_URL
+    # params = {
+    #     "q": query_str,
+    #     "key": API_KEY,
+    #     "cx": ENGINE_ID
+    # }
+    # # FIXME:
+    # params['q'] = urllib.parse.quote_plus(params['q'])
 
     if verbose or dry_run:
         click.echo(f'{query_str=}')
         # FIXME: params['key'] = 'REDACTED'
-        click.echo(f'{params=}')
+        # click.echo(f'{params=}')
         if dry_run:
             sys.exit(0)
     
-    results = requests.get(search, params=params).json()
-    if "error" in results:
-        sys.exit(f'Search failed: {results["error"]["message"]}')
+    google = google_custom_search.CustomSearch(apikey=API_KEY, engine_id=ENGINE_ID)
+
+    results = google.search(query)
+    # import ipdb ; ipdb.set_trace()
+    # breakpoint()
+
+    # results = requests.get(search, params=params).json()
+    # if "error" in results:
+    #     sys.exit(f'Search failed: {results["error"]["message"]}')
 
     if verbose:
         click.echo('RESULTS:')
         print_results(results)
 
-    with open("results.json", "w") as f:
-        json.dump(results, f, indent=2)
+    write_results(results)
 
-    totalResults = results["searchInformation"]["totalResults"]
-    click.echo(f"COUNT: {totalResults}")
+    # totalResults = results["searchInformation"]["totalResults"]
+    # click.echo(f"COUNT: {totalResults}")
 
 
 if __name__ == "__main__":
