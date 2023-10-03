@@ -51,8 +51,10 @@ def format_query(query):
     return join_and(full)
 
 
-def print_results(results):
-    for item in results[:3]:
+def print_results(results, limit):
+    if limit:
+        results = results[:limit]
+    for item in results:
         click.echo(f'ITEM.title: {item.title}')
         click.echo(f'ITEM.link: {item.data.get("link")}')
 
@@ -64,10 +66,11 @@ def write_results(results):
 
 
 @click.command()
+@click.option('--limit', default=3, help='Number of results to return')
 @click.option('-v', '--verbose', is_flag=True, help='Enable verbose mode')
 @click.option('-n', '--dry-run', is_flag=True, help='Dry run')
 @click.argument('input', type=click.File('r'), required=False)
-def main(dry_run, verbose, input="example.yaml", query=None):
+def main(dry_run, verbose, input="example.yaml", limit=None, query=None):
     if query is None:
         query = yaml.safe_load(input)
 
@@ -84,7 +87,7 @@ def main(dry_run, verbose, input="example.yaml", query=None):
   
     if verbose:
         click.echo('RESULTS:')
-        print_results(results)
+        print_results(results, limit=limit)
 
     write_results(results)
 

@@ -5,7 +5,10 @@ setup:
 	venv/bin/pip install -r requirements.txt
 
 run:
-	venv/bin/python3 gsearch.py -nv jm-john-search.yaml
+	venv/bin/python3 gsearch.py -v jm-john-search.yaml
+
+run2:
+	venv/bin/python3 gsearch.py -v --limit=10 jm-john-search.yaml
 
 test:
 	venv/bin/pytest -v
