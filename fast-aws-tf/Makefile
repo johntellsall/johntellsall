@@ -33,8 +33,7 @@ devloop-plan: aws-ping
 	git ls-files | entr -c make plan
 
 devloop-auto-apply: aws-ping
-	git ls-files | entr -c make plan-apply
-	make invoke-lambda
+	git ls-files | entr -c make plan-apply invoke-lambda
 
 devloop: devloop-plan
 
