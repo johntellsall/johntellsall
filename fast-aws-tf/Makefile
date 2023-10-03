@@ -1,6 +1,14 @@
 all:
 
-plan:
+lambda_hello.zip:
+	zip lambda_hello.zip lambda_hello.py
+
+invoke-lambda:
+	aws lambda invoke --function-name example_lambda_function \
+	--payload '{}' output.json
+	jq < output.json '.'
+
+plan: lambda_hello.zip
 	terraform validate
 	terraform plan -out terraform.tfplan
 
@@ -21,11 +29,13 @@ aws-ping:
 destroy:
 	terraform destroy
 
-devloop: aws-ping
+devloop-plan: aws-ping
 	git ls-files | entr -c make plan
 
 devloop-auto-apply: aws-ping
 	git ls-files | entr -c make plan-apply
+
+devloop: devloop-plan
 
 check:
 	./check.sh
