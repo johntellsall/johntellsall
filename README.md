@@ -1,6 +1,6 @@
 # John Tells All
 
-I am an **accomplished**, **innovative** Dev/DevOps Engineer, with skills in **Cloud** and **Security**
+I am an **accomplished**, **innovative** Backend Dev/DevOps Engineer, with skills in **Cloud** and **Security**
 
 ## Ideas
 
