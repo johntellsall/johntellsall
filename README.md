@@ -24,7 +24,7 @@ My work in the last decade is mostly DevOps, and my strong Dev background leads 
 
 - lots of AWS work: startups and enterprise consulting; some GCP
 - fan of Docker and Kubernetes
-- certificates in AWS (CDA) and Kubernetes (CKAD)
+- certificates in AWS (CDA) and Kubernetes (CKAD, pending)
 
 ## Security
 
